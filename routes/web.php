@@ -23,3 +23,12 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/pattern', [\App\Http\Controllers\PagesController::class, 'pattern'])->name('pattern');
+Route::get('/gallery', [\App\Http\Controllers\PagesController::class, 'gallery'])->name('gallery');
+Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contact'])->name('contact');
+
+
+
+

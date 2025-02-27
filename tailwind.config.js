@@ -4,7 +4,17 @@ module.exports = {
     './resources/css/**/*.css',
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'custom-purple': '#F0EBFD',
+        'custom-dark-blue': '#2D2244',
+        'custom-purple-2': '#A88EEE',
+        
+      },
+      fontFamily: {
+        'custom': ['Chewy', 'serif'],
+      },
+    },
   },
   variants: {},
   plugins: [
