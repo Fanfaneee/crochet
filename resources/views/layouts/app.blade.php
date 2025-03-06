@@ -17,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <script src="/path/to/masonry.pkgd.min.js"></script>
+    
 </head>
 <body class="  h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class=" bg-custom-purple  py-6 ">
+        <header class=" bg-custom-purple  py-6 {{ Request::is('/') ? '' : 'clip-ellipse' }} ">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-custom-dark-blue font-custom no-underline">
