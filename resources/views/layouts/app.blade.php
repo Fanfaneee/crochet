@@ -25,7 +25,7 @@
         <header class=" bg-custom-purple  py-6 {{ Request::is('/') ? '' : 'clip-ellipse' }} ">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-custom-dark-blue font-custom no-underline">
+                    <a href="{{ url('/') }}" class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">
                         {{ config('app.name', "Fanie's Crochet") }}
                     </a>
                 </div>
