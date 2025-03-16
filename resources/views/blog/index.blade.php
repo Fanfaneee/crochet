@@ -29,16 +29,16 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-3/5 mx-auto">
     @foreach ($posts as $post)
-        <div class="bg-purple-100 rounded-lg overflow-hidden shadow-lg">
+        <div class="bg-custom-purple rounded-lg overflow-hidden shadow-lg">
             <img src="{{ asset('images/' . $post->image_path) }}" alt="" class="w-full h-64 object-cover">
-            <div class="p-6">
+            <div class="p-6 pb-10">
                 <h2 class="text-gray-700 font-bold text-2xl pb-4">
                     {{ $post->title }}
                 </h2>
                 <span class="text-gray-500">
                     By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
                 </span>
-                <p class="text-s text-gray-700 pt-2 pb-10 leading-8 font-light">
+                <p class="text-s text-gray-700 pt-2 pb-8 leading-6 font-light">
                     {{ \Illuminate\Support\Str::limit($post->description, 80, '...') }}
                 </p>
                 <div class="{{ isset(Auth::user()->id) && Auth::user()->id == $post->user_id ? 'flex justify-between' : 'text-center' }}">

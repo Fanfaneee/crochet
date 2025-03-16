@@ -41329,6 +41329,46 @@ img:hover {
   }
 }
 
+.gallery_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  grid-template-rows: auto;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px; /* Ajuste selon ton besoin */
+}
+
+.item {
+  width: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Adapter la taille et la disposition des images */
+
+.item-1 { grid-column: span 2; height: 120px;
+}
+
+/* Large image */
+
+.item-2 { grid-column: span 1; height: 100px;
+}
+
+.item-3 { grid-column: span 1; height: 120px;
+}
+
+.item-4 { grid-column: span 1; height: 140px;
+}
+
+.item-5 { grid-column: span 2; height: 160px;
+}
+
+/* Large image */
+
+.item-6 { grid-column: span 1; height: 120px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -202764,3 +202804,4 @@ img:hover {
     animation: bounce 1s infinite;
   }
 }
+
