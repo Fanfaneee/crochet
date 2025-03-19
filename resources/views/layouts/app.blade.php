@@ -32,8 +32,9 @@
                 <nav class="space-x-4 text-custom-dark-blue font-bold text-sm sm:text-base">
                     <a class="no-underline hover:text-custom-purple-2" href="{{ url('/') }}">Home</a>
                     <a class="no-underline hover:text-custom-purple-2" href="/blog">Blog</a>
-                    <a class="no-underline hover:text-custom-purple-2" href="{{ route('pattern') }}">{{ __('Pattern') }}</a>
+                    
                     <a class="no-underline hover:text-custom-purple-2" href="{{ route('gallery') }}">{{ __('Gallery') }}</a>
+                    <a class="no-underline hover:text-custom-purple-2" href="{{ route('about') }}">{{ __('About Me') }}</a>
                     <a class="no-underline hover:text-custom-purple-2" href="{{ route('contact') }}">{{ __('Contact') }}</a>
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Image;
 
 class PagesController extends Controller
 {
@@ -11,14 +12,15 @@ class PagesController extends Controller
         return view('index');
     }
 
-    public function pattern()
+    public function about()
     {
-        return view('pattern');
+        return view('about');
     }
 
     public function gallery()
     {
-        return view('gallery');
+        $images = Image::all();
+        return view('gallery', compact('images'));
     }
 
     public function contact()
@@ -26,7 +28,5 @@ class PagesController extends Controller
         return view('contact');
     }
 
-
-
-
+  
 }
