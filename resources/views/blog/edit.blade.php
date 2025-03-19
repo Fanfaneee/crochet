@@ -35,11 +35,17 @@
             value="{{ $post->title }}"
             class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
 
+            
         <textarea 
             name="description"
             placeholder="Description..."
             class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">{{ $post->description }}</textarea> 
 
+        <div class="mb-4">
+            <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
+            <textarea name="content" id="content" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('content', $post->content ?? '') }}</textarea>
+        </div>
+            
         <button    
             type="submit"
             class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
