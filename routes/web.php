@@ -30,6 +30,7 @@ Route::get('/pattern', [PagesController::class, 'about'])->name('about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
 
+Route::post('/gallery/upload', [PagesController::class, 'uploadImage'])->name('gallery.upload');
 
 
 
