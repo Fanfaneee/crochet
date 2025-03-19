@@ -18,19 +18,14 @@ use App\Http\Controllers\PostsController;
 Route::get('/', [PagesController::class, 'index']);
 
 Route::resource('/blog', PostsController::class);
+Route::post('/blog/{slug}/comment', [PostsController::class, 'storeComment'])->name('posts.comment');
 
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
 Route::get('/pattern', [PagesController::class, 'about'])->name('about');
-
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
-
 Route::post('/gallery/upload', [PagesController::class, 'uploadImage'])->name('gallery.upload');
-
-
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\Comment;
 
 class PostsController extends Controller
 {
@@ -73,11 +74,12 @@ class PostsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
-    {
-        return view('blog.show')
-            ->with('post', Post::where('slug', $slug)->first());
-    }
+            
+     public function show($slug)
+     {
+         $post = Post::where('slug', $slug)->firstOrFail();
+         return view('blog.show')->with('post', $post);
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -132,6 +134,25 @@ class PostsController extends Controller
 
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
+    }
+
+    
+    
+    public function storeComment(Request $request, $slug)
+    {
+        $request->validate([
+            'content' => 'required|string|max:1000',
+        ]);
+    
+        $post = Post::where('slug', $slug)->firstOrFail();
+    
+        Comment::create([
+            'content' => $request->input('content'),
+            'user_id' => auth()->user()->id,
+            'post_id' => $post->id,
+        ]);
+    
+        return redirect()->route('blog.show', $slug)->with('message', 'Comment added successfully.');
     }
 }
 
