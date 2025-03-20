@@ -19,6 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+
 
     
 </head>
@@ -62,6 +64,7 @@
         </header>
 
         @yield('content')
+        @include('layouts.footer')
     </div>
 </body>
 </html>

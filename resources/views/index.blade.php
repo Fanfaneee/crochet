@@ -69,7 +69,7 @@
     
 </div>
 
-<div class="relative bg-purple-100 mt-20 py-12 ">
+<div class="relative bg-purple-100 mt-20 mb-20 py-12 ">
     <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">Join our newsletter !</h2>
         <p class="text-gray-600 mt-2">
