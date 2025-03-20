@@ -17,8 +17,10 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', [PagesController::class, 'index']);
 
+
 Route::resource('/blog', PostsController::class);
 Route::post('/blog/{slug}/comment', [PostsController::class, 'storeComment'])->name('posts.comment');
+Route::post('/comments/{comment}/like', [PostsController::class, 'likeComment'])->name('comments.like');
 
 Auth::routes();
 

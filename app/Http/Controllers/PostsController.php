@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Comment;
+use App\Models\Like;
+
 
 class PostsController extends Controller
 {
@@ -153,6 +155,27 @@ class PostsController extends Controller
         ]);
     
         return redirect()->route('blog.show', $slug)->with('message', 'Comment added successfully.');
+    }
+    public function likeComment($commentId)
+    {
+        $comment = Comment::findOrFail($commentId);
+        $user = auth()->user();
+
+        // Vérifiez si l'utilisateur a déjà liké ce commentaire
+        $like = Like::where('comment_id', $comment->id)->where('user_id', $user->id)->first();
+
+        if ($like) {
+            // Si l'utilisateur a déjà liké, supprimez le like
+            $like->delete();
+        } else {
+            // Sinon, ajoutez un nouveau like
+            Like::create([
+                'user_id' => $user->id,
+                'comment_id' => $comment->id,
+            ]);
+        }
+
+        return redirect()->back()->with('message', 'Comment like status updated successfully.');
     }
 }
 

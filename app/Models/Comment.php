@@ -24,4 +24,13 @@ class Comment extends Model
     {
         return $this->belongsTo(Post::class);
     }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function getLikesCountAttribute()
+    {
+        return $this->likes()->count();
+    }
 }

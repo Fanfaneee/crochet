@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\Post;
+
 
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $recentPosts = Post::orderBy('created_at', 'desc')->take(3)->get();
+        return view('index')->with('recentPosts', $recentPosts);
     }
 
     public function about()
