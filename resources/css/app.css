@@ -144,3 +144,30 @@ img:hover {
 .item-4 { grid-column: span 1; height: 140px; }
 .item-5 { grid-column: span 2; height: 160px; } /* Large image */
 .item-6 { grid-column: span 1; height: 120px; }
+
+
+::placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #B197FC !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #B197FC !important;
+}
+
+.placeholder-custom-purple-2::placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+.placeholder-custom-purple-2:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #B197FC !important;
+}
+
+.placeholder-custom-purple-2::-ms-input-placeholder { /* Microsoft Edge */
+  color: #B197FC !important;
+}

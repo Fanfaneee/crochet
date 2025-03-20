@@ -72,12 +72,12 @@
 <div class="relative bg-purple-100 mt-20 mb-20 py-12 ">
     <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">Join our newsletter !</h2>
-        <p class="text-gray-600 mt-2">
+        <p class="text-gray-600 mt-5">
             By joining the newsletter, be the first to know about new patterns and blog posts available.
         </p>
         <div class="mt-6 flex justify-center">
             <input type="email" placeholder="Your mail address"
-                class="px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                class=" placeholder-custom-purple-2::placeholder px-4 py-2 rounded-l-lg border border-custom-purple-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
             <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-r-lg hover:bg-purple-600">
                 Subscribe
             </button>

@@ -19,14 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
 
-
-    
 </head>
-<body class="  h-screen antialiased leading-none font-sans">
-    <div id="app">
-        <header class=" bg-custom-purple  py-6 {{ Request::is('/') ? '' : 'clip-ellipse' }} ">
+<body class="h-screen antialiased leading-none font-sans flex flex-col">
+    <div id="app" class="flex-grow">
+        <header class="bg-custom-purple py-6 {{ Request::is('/') ? '' : 'clip-ellipse' }}">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">
@@ -41,8 +38,6 @@
                     <a class="no-underline hover:text-custom-purple-2" href="{{ route('about') }}">{{ __('About Me') }}</a>
                     <a class="no-underline hover:text-custom-purple-2" href="{{ route('contact') }}">{{ __('Contact') }}</a>
 
-
-                    
                     @guest
                         <a class="no-underline hover:text-custom-purple-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
@@ -64,7 +59,8 @@
         </header>
 
         @yield('content')
-        @include('layouts.footer')
     </div>
+
+    @include('layouts.footer')
 </body>
 </html>

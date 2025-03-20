@@ -41369,6 +41369,34 @@ img:hover {
 .item-6 { grid-column: span 1; height: 120px;
 }
 
+::-moz-placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+::placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+.placeholder-custom-purple-2::-moz-placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+.placeholder-custom-purple-2::placeholder {
+  color: #B197FC !important; /* Remplacez cette valeur par la couleur souhaitée */
+  opacity: 1; /* Pour s'assurer que la couleur est appliquée */
+}
+
+.placeholder-custom-purple-2:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #B197FC !important;
+}
+
+.placeholder-custom-purple-2::-ms-input-placeholder { /* Microsoft Edge */
+  color: #B197FC !important;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

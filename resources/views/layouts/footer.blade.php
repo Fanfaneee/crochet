@@ -1,4 +1,4 @@
-<footer class="bg-custom-purple py-10 mt-10">
+<footer class="bg-custom-purple py-7 mt-10">
     <div class="sm:grid grid-cols-3 w-4/5 pb-2 m-auto text-center">
         <div>
             <h3 class="text-l sm:font-bold text-custom-dark-blue">
@@ -31,7 +31,7 @@
             </ul>
         </div>
 
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center ">
             <h1 class="text-2xl font-semibold text-custom-dark-blue text-center font-custom no-underline">
                 Fanie's Crochet
             </h1>
@@ -58,7 +58,7 @@
             </ul>
         </div>
     </div>
-    <p class="w-25 w-4/5 pb-3 m-auto text-center text-xs text-custom-dark-blue pt-6">
+    <p class="w-25 w-4/5 pb-3 m-auto text-center text-xs text-custom-dark-blue ">
         Copyright 2025 Fanie Bugenne. All Rights Reserved
     </p>
 </footer>
