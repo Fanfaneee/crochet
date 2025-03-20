@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="w-4/5 m-auto text-left">
-    <div class="py-15">
-        <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-1/3 h-auto rounded-lg">
-        <h1 class="text-6xl mt-8">
+    <div class="py-5 flex items-center">
+        <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-1/5 h-auto rounded-lg">
+        <h1 class="text-6xl ml-8">
             {{ $post->title }}
         </h1>
     </div>
 </div>
 
-<div class="w-4/5 m-auto pt-20">
+<div class="w-4/5 m-auto pt-7">
     <span class="text-gray-500">
         By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
     </span>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="w-4/5 m-auto pt-20">
-    <h2 class="text-2xl font-bold">Comments</h2>
+    <h2 class="text-2xl font-bold"> {{ $post->comments_count }} Comments</h2>
 
     @foreach ($post->comments as $comment)
         <div class="mt-4">
