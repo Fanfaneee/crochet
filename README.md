@@ -121,5 +121,5 @@ By following these steps, you can use MailHog to test the contact form functiona
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+![Screeshot Home Page](https://github.com/Fanfaneee/crochet/blob/main/public/images/page_complete.png)
