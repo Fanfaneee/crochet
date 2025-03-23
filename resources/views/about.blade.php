@@ -1,7 +1,12 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-4/5 m-auto text-center">
-    <div class="py-16">
+<div class="w-4/5 m-auto text-left">
+    <div class="py-5">
+        <a href="{{ url('/') }}" class="text-custom-purple-2 hover:text-custom-purple-3 text-3xl">
+            <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
+        </a>
+    </div>
+    <div class="py-16 text-center">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             About Me
         </h1>
