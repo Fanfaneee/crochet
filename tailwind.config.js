@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         'custom': ['Chewy', 'serif'],
       },
+      lineHeight: {
+        'custom': '1.3rem',
+      },
     },
   },
   variants: {},

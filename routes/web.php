@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,6 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', [PagesController::class, 'index']);
 
-
 Route::resource('/blog', PostsController::class);
 Route::post('/blog/{slug}/comment', [PostsController::class, 'storeComment'])->name('posts.comment');
 Route::post('/comments/{comment}/like', [PostsController::class, 'likeComment'])->name('comments.like');
@@ -30,4 +30,6 @@ Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
 Route::post('/gallery/upload', [PagesController::class, 'uploadImage'])->name('gallery.upload');
+
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 

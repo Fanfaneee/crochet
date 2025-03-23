@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="w-4/5 m-auto text-left">
     <div class="py-15">
         <h1 class="text-6xl">
@@ -35,7 +36,6 @@
             value="{{ $post->title }}"
             class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
 
-            
         <textarea 
             name="description"
             placeholder="Description..."
@@ -43,7 +43,7 @@
 
         <div class="mb-4">
             <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
-            <textarea name="content" id="content" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('content', $post->content ?? '') }}</textarea>
+            <textarea name="content" id="content" rows="10" class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ old('content', $post->content ?? '') }}</textarea>
         </div>
             
         <button    
@@ -53,5 +53,21 @@
         </button>
     </form>
 </div>
+@push('scripts')
+<script>
+    tinymce.init({
+        selector: 'textarea#content',  // Cible l'élément textarea par son id
+        height: 300,  // Hauteur de l'éditeur
+        menubar: false,  // Masquer le menu
+        plugins: 'advlist autolink lists link image charmap print preview anchor',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | link image',
+        setup: function(editor) {
+            editor.on('change', function() {
+                tinymce.triggerSave(); // Sauvegarder l'édition du contenu dans la textarea
+            });
+        }
+    });
+</script>
+@endpush
 
 @endsection

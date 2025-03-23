@@ -5,7 +5,7 @@
                 Pages
             </h3>
 
-            <ul class="flex justify-center space-x-4 py-4 sm:text-s pt-5 text-custom-purple-2">
+            <ul class="flex justify-center fix-ul-li space-x-4 py-4 sm:text-s pt-5 text-custom-purple-2">
                 <li>
                     <a href="/" class="hover:text-custom-dark-blue">Home</a>
                 </li>
@@ -42,7 +42,7 @@
                 Socials
             </h3>
 
-            <ul class="flex justify-center space-x-4 py-4 sm:text-s pt-4 text-custom-purple-2">
+            <ul class="flex fix-ul-li justify-center space-x-4 py-4 sm:text-s pt-4 text-custom-purple-2">
                 <li>
                     <i class="fab fa-instagram fa-2x" style="color: #B197FC;"></i>
                 </li>

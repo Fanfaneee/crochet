@@ -1,14 +1,22 @@
 @extends('layouts.app')
 @section('content')
 <div class="w-4/5 m-auto text-center">
-    <div class="py-16">
+    <div class="pt-16 pb-7">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             Gallery
         </h1>
     </div>
 </div>
+<div class="w-4/5 m-auto text-center">
+    
+    <p class="text-custom-dark-blue">
+  This gallery is full of inspiration from pinterest, new inspi will arrived soon. click on the picture to access the pinterest link.
+  </p>
+    
+</div>
 
 <!-- Formulaire pour télécharger des images -->
+ <!--
 <div class="w-4/5 m-auto pt-10">
     <form action="{{ route('gallery.upload') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -30,7 +38,7 @@
             </button>
         </div>
     </form>
-</div>
+</div>-->
 
 <section id="gallery" class="gallery">
   <div class="container m-auto">
@@ -54,7 +62,7 @@
         <img id="modalImage" src="" alt="" class="w-full h-auto rounded-lg">
       </div>
       <div class="items-center px-4 py-3">
-        <button id="openImageButton" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <button id="openImageButton" class="px-4 py-2 bg-custom-purple-2 hover:bg-custom-purple-3  text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
           Open Link in New Tab
         </button>
         <button onclick="closeModal()" class="mt-2 px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300">

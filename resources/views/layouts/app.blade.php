@@ -17,8 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.tiny.cloud/1/0bde69llyjongbltl07nfvhk1khday09cufyczlve9rh4j3d/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+
 
 </head>
 <body class="h-screen antialiased leading-none font-sans flex flex-col">
@@ -62,5 +64,6 @@
     </div>
 
     @include('layouts.footer')
+    @stack('scripts')
 </body>
 </html>
