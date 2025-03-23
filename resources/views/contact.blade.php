@@ -1,18 +1,21 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-4/5 m-auto text-center">
-    <div class="pt-16 pb-7">
+<div class="w-4/5 m-auto text-left">
+    <div class="py-5">
+        <a href="{{ url('/') }}" class="text-custom-purple-2 hover:text-custom-purple-3 text-3xl">
+            <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
+        </a>
+    </div>
+    <div class="pt-16 pb-7 text-center">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             Contact Me
         </h1>
     </div>
 </div>
 <div class="w-4/5 m-auto text-center">
-    
     <p class="text-custom-dark-blue">
-If you have any queries or demand, let us know by feeling this form.
-        </p>
-    
+        If you have any queries or demand, let us know by filling this form.
+    </p>
 </div>
 
 <div class="w-4/5 m-auto">
