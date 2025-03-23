@@ -1,8 +1,6 @@
-
-![Fanie's Crochet Logo](https://github.com/Fanfaneee/crochet/blob/main/public/images/logo_read_me.png)
-
-
-
+<div align="center">
+  <img src="https://github.com/Fanfaneee/crochet/blob/main/public/images/logo_read_me.png" alt="Fanie's Crochet Logo">
+</div>
 
 
 
