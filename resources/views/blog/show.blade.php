@@ -2,8 +2,13 @@
 
 @section('content')
 <div class="w-4/5 m-auto text-left">
+    <div class="py-5">
+        <a href="{{ url('/blog') }}" class="text-custom-purple-2 hover:text-custom-purple-3 text-3xl">
+            <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
+        </a>
+    </div>
     <div class="py-5 flex items-center">
-        <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-1/5 h-auto rounded-lg">
+        <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-1/5 h-auto rounded-lg ml-4">
         <h1 class="text-6xl ml-8">
             {{ $post->title }}
         </h1>
@@ -15,16 +20,16 @@
         By <span class="font-bold italic text-custom-purple-2">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
     </span>
 
-    <p class="text-xl text-gray-700 pt-8 pb-10  line-height-custom font-light">
+    <p class="text-xl text-gray-700 pt-8 pb-10 line-height-custom font-light">
         {{ $post->description }}
     </p>
 
-    <div class="text-xl text-gray-700 pt-8 pb-10  font-light">
-    {!! nl2br($post->content) !!}
+    <div class="text-xl text-gray-700 pt-8 pb-10 font-light">
+        {!! nl2br($post->content) !!}
     </div>
 </div>
 
-<div class="w-4/5 m-auto pt-20 ">
+<div class="w-4/5 m-auto pt-20">
     <h2 class="text-2xl font-bold">Comments ({{ $post->comments_count }})</h2>
 
     @foreach ($post->comments as $comment)

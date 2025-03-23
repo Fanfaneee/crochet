@@ -9,11 +9,9 @@
     </div>
 </div>
 <div class="w-4/5 m-auto text-center pb-7">
-    
     <p class="text-custom-dark-blue">
- Find here all the patterns you need !
-  </p>
-    
+        Find here all the patterns you need!
+    </p>
 </div>
 
 @if (session()->has('message'))
@@ -24,7 +22,7 @@
     </div>
 @endif
 
-@if (Auth::check())
+@if (Auth::check() && Auth::user()->email === 'fanie@gmail.com')
     <div class="pt-15 w-4/5 m-auto">
         <a 
             href="/blog/create"
@@ -49,10 +47,10 @@
                     {{ \Illuminate\Support\Str::limit($post->description, 80, '...') }}
                 </p>
                 <div class="{{ isset(Auth::user()->id) && Auth::user()->id == $post->user_id ? 'flex justify-between' : 'text-center' }}">
-                    <a href="/blog/{{ $post->slug }}" class=" hover:bg-custom-purple-3 uppercase bg-custom-purple-2 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-md">
+                    <a href="/blog/{{ $post->slug }}" class="hover:bg-custom-purple-3 uppercase bg-custom-purple-2 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-md">
                         Keep Reading
                     </a>
-                    @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                    @if (Auth::check() && Auth::user()->email === 'fanie@gmail.com')
                         <div class="flex justify-end mt-4">
                             <a href="/blog/{{ $post->slug }}/edit" class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2 mr-4">
                                 Edit

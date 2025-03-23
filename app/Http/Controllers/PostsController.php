@@ -7,50 +7,41 @@ use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Comment;
 use App\Models\Like;
-
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
- 
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('blog.index')
             ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
+        if (Auth::user()->email !== 'fanie@gmail.com') {
+            return redirect('/')->with('error', 'Unauthorized access');
+        }
+
         return view('blog.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        if (Auth::user()->email !== 'fanie@gmail.com') {
+            return redirect('/')->with('error', 'Unauthorized access');
+        }
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
             'content' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
-            
         ]);
 
         $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
@@ -70,40 +61,28 @@ class PostsController extends Controller
             ->with('message', 'Your post has been added!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
-            
-     public function show($slug)
-     {
-         $post = Post::where('slug', $slug)->withCount('comments')->firstOrFail();
-         return view('blog.show')->with('post', $post);
-     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($slug)
+    public function show($slug)
     {
-        return view('blog.edit')
-            ->with('post', Post::where('slug', $slug)->first());
+        $post = Post::where('slug', $slug)->withCount('comments')->firstOrFail();
+        return view('blog.show')->with('post', $post);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
+    public function edit($slug)
+    {
+        if (Auth::user()->email !== 'fanie@gmail.com') {
+            return redirect('/')->with('error', 'Unauthorized access');
+        }
+
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('blog.edit')->with('post', $post);
+    }
+
     public function update(Request $request, $slug)
     {
+        if (Auth::user()->email !== 'fanie@gmail.com') {
+            return redirect('/')->with('error', 'Unauthorized access');
+        }
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -123,39 +102,36 @@ class PostsController extends Controller
             ->with('message', 'Your post has been updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($slug)
     {
-        $post = Post::where('slug', $slug);
+        if (Auth::user()->email !== 'fanie@gmail.com') {
+            return redirect('/')->with('error', 'Unauthorized access');
+        }
+
+        $post = Post::where('slug', $slug)->firstOrFail();
         $post->delete();
 
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
     }
 
-    
-    
     public function storeComment(Request $request, $slug)
     {
         $request->validate([
             'content' => 'required|string|max:1000',
         ]);
-    
+
         $post = Post::where('slug', $slug)->firstOrFail();
-    
+
         Comment::create([
             'content' => $request->input('content'),
             'user_id' => auth()->user()->id,
             'post_id' => $post->id,
         ]);
-    
+
         return redirect()->route('blog.show', $slug)->with('message', 'Comment added successfully.');
     }
+
     public function likeComment($commentId)
     {
         $comment = Comment::findOrFail($commentId);
