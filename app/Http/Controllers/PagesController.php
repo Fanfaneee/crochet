@@ -12,7 +12,11 @@ class PagesController extends Controller
     public function index()
     {
         $recentPosts = Post::orderBy('created_at', 'desc')->take(3)->get();
-        return view('index')->with('recentPosts', $recentPosts);
+        $recentPhotos = Image::orderBy('created_at', 'desc')->take(4)->get();
+        return view('index')->with([
+            'recentPosts' => $recentPosts,
+            'recentPhotos' => $recentPhotos,
+        ]);
     }
 
     public function about()

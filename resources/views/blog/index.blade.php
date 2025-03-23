@@ -2,11 +2,18 @@
 
 @section('content')
 <div class="w-4/5 m-auto text-center">
-    <div class="py-16">
+    <div class="pt-16 pb-7">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             Blog Posts
         </h1>
     </div>
+</div>
+<div class="w-4/5 m-auto text-center pb-7">
+    
+    <p class="text-custom-dark-blue">
+ Find here all the patterns you need !
+  </p>
+    
 </div>
 
 @if (session()->has('message'))

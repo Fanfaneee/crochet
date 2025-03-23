@@ -22,16 +22,26 @@
 </section>
 
 <div class="w-4/5 m-auto text-center">
-    <div class="py-16">
+    <div class="pt-16 pb-7">
+        
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
+        <a class="no-underline hover:text-custom-purple-2" href="/blog">
             Recent Blog Posts
+            </a>    
         </h1>
     </div>
 </div>
 
-<div class="w-3/5 m-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+@if (session()->has('message'))
+    <div class="w-4/5 m-auto mt-10 pl-2">
+        <p class="w-2/6 mb-4 text-gray-50 bg-green-500 rounded-2xl py-4">
+            {{ session()->get('message') }}
+        </p>
+    </div>
+@endif
 
-@foreach ($recentPosts as $post)
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-3/5 mx-auto">
+    @foreach ($recentPosts as $post)
         <div class="bg-custom-purple rounded-lg overflow-hidden shadow-lg">
             <img src="{{ asset('images/' . $post->image_path) }}" alt="" class="w-full h-64 object-cover">
             <div class="p-6 pb-10">
@@ -44,45 +54,46 @@
                 <p class="text-s text-gray-700 pt-2 pb-8 leading-6 font-light">
                     {{ \Illuminate\Support\Str::limit($post->description, 80, '...') }}
                 </p>
-                <div class="{{ isset(Auth::user()->id) && Auth::user()->id == $post->user_id ? 'flex justify-between' : 'text-center' }}">
-                    <a href="/blog/{{ $post->slug }}" class=" hover:bg-custom-purple-3 uppercase bg-custom-purple-2 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-md">
+                <div class="text-center">
+                    <a href="/blog/{{ $post->slug }}" class="hover:bg-custom-purple-3 uppercase bg-custom-purple-2 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-md">
                         Keep Reading
                     </a>
-                    @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                        <div class="flex justify-end mt-4">
-                            <a href="/blog/{{ $post->slug }}/edit" class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2 mr-4">
-                                Edit
-                            </a>
-                            <form action="/blog/{{ $post->slug }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button class="text-red-500 pr-3" type="submit">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
     @endforeach
-    
 </div>
 
-<div class="relative bg-purple-100 mt-20 mb-20 py-12 ">
+<div class="relative bg-purple-100 mt-20 py-12">
     <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">Join our newsletter !</h2>
+        <h2 class="text-3xl font-semibold text-custom-dark-blue font-custom no-underline">Join our newsletter!</h2>
         <p class="text-gray-600 mt-5">
             By joining the newsletter, be the first to know about new patterns and blog posts available.
         </p>
         <div class="mt-6 flex justify-center">
             <input type="email" placeholder="Your mail address"
-                class=" placeholder-custom-purple-2::placeholder px-4 py-2 rounded-l-lg border border-custom-purple-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
-            <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-r-lg hover:bg-purple-600">
+                class="placeholder-custom-purple-2::placeholder px-4 py-2 rounded-l-lg border border-custom-purple-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <button class="px-4 py-2 bg-custom-purple-2 text-white font-semibold rounded-r-lg hover:bg-custom-purple-3">
                 Subscribe
             </button>
         </div>
     </div>
+</div>
+
+<div class="w-4/5 m-auto text-center pt-16">
+    <h2 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
+        <a class="no-underline hover:text-custom-purple-2" href="{{ route('gallery') }}">
+            Recent Gallery Photos
+        </a>
+    </h2>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-3/5 mx-auto pt-10 mb-10">
+    @foreach ($recentPhotos as $photo)
+        <div class="bg-custom-purple rounded-lg overflow-hidden shadow-lg">
+            <img src="{{ asset('images/' . $photo->path) }}" alt="{{ $photo->alt_text }}" class="w-full h-64 object-cover">
+        </div>
+    @endforeach
 </div>
 
 @endsection
