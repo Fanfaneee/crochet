@@ -72,6 +72,10 @@
                 </button>
             </div>
         </form>
+    @else
+        <div class="mt-4">
+            <p class="text-gray-700">You need to be logged in to post a comment. <a href="{{ route('login') }}" class="text-custom-purple-2 hover:text-custom-purple-3">Login here</a>.</p>
+        </div>
     @endauth
 </div>
 @endsection

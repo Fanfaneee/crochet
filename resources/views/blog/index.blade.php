@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-4/5 m-auto text-center">
-    <div class="pt-16 pb-7">
+<div class="w-4/5 m-auto text-left">
+    <div class="py-5">
+        <a href="{{ url('/') }}" class="text-custom-purple-2 hover:text-custom-purple-3 text-3xl">
+            <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
+        </a>
+    </div>
+    <div class="pt-5 pb-7 text-center">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             Blog Posts
         </h1>
@@ -46,7 +51,7 @@
                 <p class="text-s text-gray-700 pt-2 pb-8 leading-6 font-light">
                     {{ \Illuminate\Support\Str::limit($post->description, 80, '...') }}
                 </p>
-                <div class="{{ isset(Auth::user()->id) && Auth::user()->id == $post->user_id ? 'flex justify-between' : 'text-center' }}">
+                <div class="{{ Auth::check() && Auth::user()->email === 'fanie@gmail.com' ? 'flex justify-between' : 'text-center' }}">
                     <a href="/blog/{{ $post->slug }}" class="hover:bg-custom-purple-3 uppercase bg-custom-purple-2 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-md">
                         Keep Reading
                     </a>

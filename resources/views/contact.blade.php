@@ -6,7 +6,7 @@
             <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
         </a>
     </div>
-    <div class="pt-16 pb-7 text-center">
+    <div class="pt-5 pb-7 text-center">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             Contact Me
         </h1>

@@ -6,7 +6,7 @@
             <i class="fas fa-arrow-left"></i> <!-- Icône de flèche -->
         </a>
     </div>
-    <div class="py-16 text-center">
+    <div class="pt-5 pb-5 text-center">
         <h1 class="text-4xl font-semibold text-custom-dark-blue font-custom no-underline">
             About Me
         </h1>
@@ -25,7 +25,7 @@
             It all started in October 2022 when I came across a video that completely changed the way I saw crochet. I discovered that it wasn’t just about old-fashioned designs but could also be used to create modern clothing, trendy accessories, and even adorable plushies.
         </p>
         <p class="text-xl text-custom-dark-blue leading-8 mt-4">
-            Having always been passionate about arts and crafts—sewing, painting, and all things creative—it felt natural for me to dive into the world of crochet. As soon as I picked up my first crochet hook and a ball of yarn, I knew I had found something special.
+            Having always been passionate about arts and crafts-sewing, painting, and all things creative-it felt natural for me to dive into the world of crochet. As soon as I picked up my first crochet hook and a ball of yarn, I knew I had found something special.
         </p>
         <p class="text-xl text-custom-dark-blue leading-8 mt-4">
             After just a month of practice, I was able to make my very first top. Since then, I’ve been turning my ideas into reality, one stitch at a time. Now, with nothing but a hook and some yarn, I can create anything I imagine!
