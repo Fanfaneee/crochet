@@ -123,3 +123,6 @@ By following these steps, you can use MailHog to test the contact form functiona
 
 
 ![Screeshot Home Page](https://github.com/Fanfaneee/crochet/blob/main/public/images/page_complete.png)
+![Screeshot Home Page](https://github.com/Fanfaneee/crochet/blob/main/public/images/page_blog_complete.png)
+![Screeshot Home Page](https://github.com/Fanfaneee/crochet/blob/main/public/images/page_gallery_complete.png)
+![Screeshot Home Page](https://github.com/Fanfaneee/crochet/blob/main/public/images/page_contact_complete.png)
