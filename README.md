@@ -111,12 +111,14 @@ By following these steps, you can use MailHog to test the contact form functiona
 
 ## Color Reference
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| dark-blue | ![#2D2244](https://via.placeholder.com/10/2D2244?text=+) #2D2244 |
-| purple 1 | ![#F0EBFD](https://via.placeholder.com/10/f8f8f8?text=+) #F0EBFD |
-| purple 2 | ![#A88EEE](https://via.placeholder.com/10/A88EEE?text=+) #A88EEE |
-| purple 3 | ![#9271EA](https://via.placeholder.com/10/9271EA?text=+) #9271EA |
+| Color   Name       | Hex             | Color|                                                   
+| ----------------- | ------------------------------------------------------------------ |---------------------|
+| dark-blue | `#2D2244` | ![#2D2244](https://placehold.co/15x15/2D2244/2D2244.png) |
+| purple 1 |  `#F0EBFD` |![#F0EBFD](https://placehold.co/15x15/F0EBFD/F0EBFD.png)|
+| purple 2 |  `#A88EEE` |![#A88EEE](https://placehold.co/15x15/A88EEE/A88EEE.png)|
+| purple 3 |  `#9271EA` |![#9271EA](https://placehold.co/15x15/9271EA/9271EA.png)|
+
+
 
 
 ## Screenshots
